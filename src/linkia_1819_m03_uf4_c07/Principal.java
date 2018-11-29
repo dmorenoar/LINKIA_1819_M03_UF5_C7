@@ -5,8 +5,12 @@
  */
 package linkia_1819_m03_uf4_c07;
 
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -116,8 +120,25 @@ public class Principal extends JFrame {
             v.setLocationRelativeTo(null);
             v.setVisible(true);
 
+          for (Component c: getAllComponents(getContentPane())){
+              System.out.println(c.getClass());
+          }
+
+          
+          
         }
 
     }
 
+    public static ArrayList<Component> getAllComponents(final Container c) {
+        Component[] comps = c.getComponents();
+        ArrayList<Component> compList = new ArrayList<>();
+        for (Component comp : comps) {
+            compList.add(comp);
+            if (comp instanceof Container) {
+                compList.addAll(getAllComponents((Container) comp));
+            }
+        }
+        return compList;
+    }
 }
