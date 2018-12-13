@@ -40,15 +40,6 @@ public class Principal extends JFrame {
     JCheckBox checkFantasia;
     ButtonGroup bgSex;
 
-    public ImageIcon getImageIcon(String iconName) {
-
-        ImageIcon imageIcon = null;
-
-            imageIcon = new ImageIcon(getClass().getResource("/img/download.png"));
-
-        return imageIcon;
-    }
-
     //Constructor de la ventana por defecto
     public Principal() throws IOException {
 
