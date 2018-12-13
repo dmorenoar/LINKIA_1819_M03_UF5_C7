@@ -3,16 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package linkia_1819_m03_uf4_c07;
+package main;
 
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -34,8 +40,20 @@ public class Principal extends JFrame {
     JCheckBox checkFantasia;
     ButtonGroup bgSex;
 
+    public ImageIcon getImageIcon(String iconName) {
+
+        ImageIcon imageIcon = null;
+
+            imageIcon = new ImageIcon(getClass().getResource("/img/download.png"));
+
+        return imageIcon;
+    }
+
     //Constructor de la ventana por defecto
-    public Principal() {
+    public Principal() throws IOException {
+
+        //Asignamos el icono al JFRAME
+        setIconImage(new ImageIcon(Principal.class.getResource("/imagenes/icon.png")).getImage());
 
         //Tenemos que decirle que el no nos autoajuste las posiciones
         getContentPane().setLayout(null);
@@ -120,12 +138,10 @@ public class Principal extends JFrame {
             v.setLocationRelativeTo(null);
             v.setVisible(true);
 
-          for (Component c: getAllComponents(getContentPane())){
-              System.out.println(c.getClass());
-          }
+            for (Component c : getAllComponents(getContentPane())) {
+                System.out.println(c.getClass());
+            }
 
-          
-          
         }
 
     }

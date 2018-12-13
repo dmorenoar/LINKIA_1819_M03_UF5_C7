@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package linkia_1819_m03_uf4_c07;
+package main;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
