@@ -44,7 +44,7 @@ public class Principal extends JFrame {
     public Principal() throws IOException {
 
         //Asignamos el icono al JFRAME
-        setIconImage(new ImageIcon(Principal.class.getResource("/imagenes/icon.png")).getImage());
+        setIconImage(new ImageIcon(Principal.class.getResource("/imagenes/Icon.png")).getImage());
 
         //Tenemos que decirle que el no nos autoajuste las posiciones
         getContentPane().setLayout(null);
